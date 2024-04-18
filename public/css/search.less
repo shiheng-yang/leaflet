@@ -1,0 +1,294 @@
+// 页面中最大的盒子
+.about {
+  padding: 0.1rem;
+  height: calc(100% - 0.2rem);
+}
+
+// 顶部筛选框布局
+.titles {
+  font-size: 16px;
+  width: 100%;
+  overflow: auto;
+
+  input {
+    outline: none;
+    height: 26px !important;
+  }
+
+  div {
+    display: inline-block;
+    margin: 2px 0;
+  }
+
+  > span {
+    float: right;
+  }
+}
+
+// 筛选查询下拉框
+.azjgs {
+  // 下拉框边框，宽度
+  /deep/.el-input--suffix {
+    border-radius: 4px;
+    width: 174px;
+    margin-right: 6px;
+  }
+}
+
+//表格居中
+/deep/.el-table td,
+/deep/.el-table th {
+  text-align: center;
+}
+
+// 鼠标移入表格高亮显示
+/deep/ .el-table--enable-row-hover {
+  .el-table__body tr:hover > td {
+    background: #ccc;
+    color: #fff;
+  }
+}
+
+// 下拉框内容背景色
+.el-select-dropdown__item.selected,
+.el-select-dropdown__item:hover {
+  color: #fff !important;
+  background: #409eff !important;
+}
+.el-select-dropdown__item.hover {
+  background: #fff;
+}
+
+// 筛选查询日期输入框
+/deep/.el-date-editor--daterange.el-input,
+.el-date-editor--daterange.el-input__inner,
+.el-date-editor--timerange.el-input,
+.el-date-editor--timerange.el-input__inner {
+  width: 216px;
+}
+
+/deep/.el-range-editor.el-input__inner {
+  padding: 4px;
+  border: 1px solid #aaa;
+  margin-right: 6px;
+}
+
+// 模态框主体
+.dialogsC {
+  display: flex;
+  justify-content: center;
+}
+
+// 模态框头部中间尾部
+/deep/.el-dialog__header {
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+/deep/.el-dialog__footer {
+  border-top: 1px solid #ccc;
+}
+
+/deep/.el-dialog--center {
+  border-radius: 10px;
+}
+
+// 删除
+.deleteP {
+  font-size: 0.2rem;
+}
+
+/deep/.el-dialog--center .el-dialog__body {
+  padding: 10px 0;
+}
+
+//模态框
+.newDialog {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  .title {
+    display: flex;
+    font-size: inherit;
+    flex-direction: column;
+  }
+
+  /deep/.el-select {
+    margin-right: 0;
+  }
+
+  // 下拉框边框，宽度
+  /deep/.el-input--suffix {
+    border-radius: 4px;
+    width: 174px;
+  }
+
+  // 所有的input
+  /deep/.el-input {
+    width: 380px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  // 禁用的input
+  /deep/.el-input.is-disabled .el-input__inner {
+    height: 32px !important;
+    background-color: #eee;
+    color: #aaa;
+  }
+
+  // 未禁用的input
+  /deep/.el-input .el-input__inner {
+    height: 32px !important;
+    width: 100%;
+  }
+}
+
+// 导出按钮
+.el-dropdown-menu__item:focus,
+.el-dropdown-menu__item:not(.is-disabled):hover {
+  color: #fff;
+  background: #409eff;
+}
+
+.el-dropdown-link {
+  cursor: pointer;
+  color: #fff;
+  background: #409eff;
+  height: 28px;
+  border-radius: 3px;
+  line-height: 28px;
+  margin: 0 10px;
+  padding: 6px 11px;
+}
+
+.el-icon-arrow-down {
+  font-size: 12px;
+}
+
+.icon-excel:before {
+  color: #45b058;
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.icon-pdf:before {
+  color: #007ffc;
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+// 所有下拉框箭头居中
+.azjgs,
+.newDialog {
+  /deep/ .el-input__suffix {
+    display: flex;
+    align-items: center;
+  }
+
+  // 所有下拉框高度
+  /deep/.el-input__inner {
+    height: 32px;
+    border: 1px solid #aaa;
+    &:hover,
+    &:focus {
+      border-color: #409eff;
+    }
+  }
+}
+// 表格暂无数据
+.empty {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > :last-child {
+    font-size: 16px;
+    color: #666;
+    position: absolute;
+    bottom: -20px;
+  }
+}
+.el-table {
+  ::-webkit-scrollbar {
+    background-color: #dbdbdb;
+    border-radius: 20px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: #b2b2b2 !important;
+  }
+}
+// 分辨率小于1000 手机端
+@media screen and (max-width: 1000px) {
+  /deep/.el-dialog--center {
+    width: 96% !important;
+  }
+  .about {
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  .dialogsC {
+    margin: 0 10px;
+  }
+  .newDialog {
+    /deep/.el-input,
+    /deep/.el-textarea {
+      width: auto;
+    }
+  }
+  .el-pagination {
+    overflow: auto;
+  }
+}
+// 分辨率小于1024
+@media screen and (min-width: 1000px) and (max-width: 1025px) {
+  /deep/.el-dialog--center {
+    width: 47% !important;
+  }
+}
+// 分辨率小于1152
+@media screen and (min-width: 1025px) and (max-width: 1152px) {
+  /deep/.el-dialog--center {
+    width: 45% !important;
+  }
+}
+// 分辨率小于1280
+@media screen and (min-width: 1152px) and (max-width: 1280px) {
+  /deep/.el-dialog--center {
+    width: 39% !important;
+  }
+}
+// 分辨率小于1360
+@media screen and (min-width: 1280px) and (max-width: 1366px) {
+  /deep/.el-dialog--center {
+    width: 35% !important;
+  }
+}
+// 分辨率小于1440
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+  /deep/.el-dialog--center {
+    width: 32% !important;
+  }
+}
+// 分辨率小于1600
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+  /deep/.el-dialog--center {
+    width: 30% !important;
+  }
+}
+// 分辨率小于1680
+@media screen and (min-width: 1600px) and (max-width: 1680px) {
+  /deep/.el-dialog--center {
+    width: 26% !important;
+  }
+}
+// 分辨率小于1880
+@media screen and (min-width: 1680px) and (max-width: 1880px) {
+  /deep/.el-dialog--center {
+    width: 24% !important;
+  }
+}
